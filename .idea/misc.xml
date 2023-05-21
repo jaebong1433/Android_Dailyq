@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/82104/Projects/DailyQ/app/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
+        <entry key="..\:/Users/82104/Projects/DailyQ/app/src/main/res/layout/activity_write.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/82104/Projects/DailyQ/app/src/main/res/layout/fragment_today.xml" value="0.28532608695652173" />
         <entry key="..\:/Users/82104/Projects/DailyQ/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/82104/Projects/DailyQ/app/src/main/res/menu/write_menu.xml" value="0.1703125" />
         <entry key="..\:/Users/82104/Projects/DailyQ/app/src/main/res/mipmap/ic_launcher.xml" value="0.26" />
       </map>
     </option>

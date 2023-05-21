@@ -1844,12 +1844,14 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_photo
 id alertTitle
 id aligned
 id all
 id always
 id animateToEnd
 id animateToStart
+id answer
 id answer_area
 id arc
 id asConfigured
@@ -1920,6 +1922,7 @@ id disableHome
 id disablePostScroll
 id disableScroll
 id disjoint
+id done
 id dragDown
 id dragEnd
 id dragLeft
@@ -2075,7 +2078,9 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id photo
 id photo_answer
+id photo_area
 id pin
 id position
 id postLayout
@@ -2286,6 +2291,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_write
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2374,6 +2380,7 @@ layout text_view_without_line_height
 menu bottom_nav_menu
 menu example_menu
 menu example_menu2
+menu write_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -2404,6 +2411,8 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add_photo
+string answer_hint
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2414,8 +2423,10 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string date_format
 string delete
-string dialog_mst_are_you_sure_to_delete
+string dialog_msg_are_you_sure_to_delete
+string done
 string edit
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
