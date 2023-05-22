@@ -26,6 +26,13 @@
     <string name="dialog_msg_are_you_sure_to_delete">정말 삭제하시겠습니까?</string>
     <string name="done">완료</string>
     <string name="edit">수정</string>
+    <string name="error_login_failed">아이디 또는 패스워드를 다시 확인해 주세요</string>
+    <string name="error_password_must_contain_number">숫자가 포함되어야 합니다.</string>
+    <string name="error_password_too_short">패스워드가 너무 짧습니다.</string>
+    <string name="error_uid_too_short">아이디가 너무 짧습니다.</string>
+    <string name="login">로그인</string>
+    <string name="login_id_hint">아이디</string>
+    <string name="login_password_hint">패스워드</string>
     <string name="ok">확인</string>
     <string name="title_profile">프로필</string>
     <string name="title_timeline">타임라인</string>
@@ -42,5 +49,9 @@
         
         <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
         
+    </style>
+    <style name="Theme.DailyQ.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

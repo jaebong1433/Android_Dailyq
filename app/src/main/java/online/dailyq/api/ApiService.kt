@@ -5,10 +5,13 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import online.dailyq.AuthManager
 import online.dailyq.api.adapter.LocalDateAdapter
 import online.dailyq.api.converter.LocalDateConverterFactory
 import online.dailyq.api.response.Answer
+import online.dailyq.api.response.AuthToken
 import online.dailyq.api.response.Question
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,6 +35,8 @@ interface ApiService {
                 .connectTimeout(3, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
+                .addInterceptor(AuthInterceptor())
+                .authenticator(TokenRefreshAuthenticator())
                 .addInterceptor(logging)
                 .build()
         }
@@ -60,19 +65,36 @@ interface ApiService {
         fun getInstance(): ApiService = INSTANCE!!
     }
 
-    @GET("/v1/questions/{qid}")
+    @FormUrlEncoded
+    @POST("/v2/token")
+    suspend fun login(
+        @Field("username") uid: String,
+        @Field("password") password: String,
+        @Field("grant_type") grantType: String = "password",
+        @Tag authType: AuthType = AuthType.NO_AUTH
+    ): Response<AuthToken>
+
+    @FormUrlEncoded
+    @POST("/v2/token")
+    fun refreshToken(
+        @Field("refresh_token") refreshToken: String,
+        @Field("grant_type") grantType: String = "refresh_token",
+        @Tag authType: AuthType = AuthType.NO_AUTH
+    ): Call<AuthToken>
+
+    @GET("/v2/questions/{qid}")
     suspend fun getQuestion(
         @Path("qid") qid: LocalDate
     ): Response<Question>
 
-    @GET("/v1/questions/{qid}/answers/{uid}")
+    @GET("/v2/questions/{qid}/answers/{uid}")
     suspend fun getAnswer(
         @Path("qid") qid: LocalDate,
-        @Path("uid") uid: String? = "anonymous"
+        @Path("uid") uid: String? = AuthManager.uid
     ): Response<Answer>
 
     @FormUrlEncoded
-    @POST("/v1/questions/{qid}/answers")
+    @POST("/v2/questions/{qid}/answers")
     suspend fun writeAnswer(
         @Path("qid") qid: LocalDate,
         @Field("text") text: String? = null,
@@ -80,18 +102,18 @@ interface ApiService {
     ): Response<Answer>
 
     @FormUrlEncoded
-    @PUT("/v1/questions/{qid}/answers/{uid}")
+    @PUT("/v2/questions/{qid}/answers/{uid}")
     suspend fun editAnswer(
         @Path("qid") qid: LocalDate,
         @Field("text") text: String? = null,
         @Field("photo") photo: String? = null,
-        @Path("uid") uid: String? = "anonymous"
+        @Path("uid") uid: String? =  AuthManager.uid
     ): Response<Answer>
 
-    @DELETE("/v1/questions/{qid}/answers/{uid}")
+    @DELETE("/v2/questions/{qid}/answers/{uid}")
     suspend fun deleteAnswer(
         @Path("qid") qid: LocalDate,
-        @Path("uid") uid: String? = "anonymous"
+        @Path("uid") uid: String? =  AuthManager.uid
     ): Response<Unit>
 
 }

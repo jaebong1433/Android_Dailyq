@@ -15,7 +15,7 @@
 11-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <application
-13-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:7:5-31:19
+13-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:7:5-41:19
 14        android:name="online.dailyq.App"
 14-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:8:9-28
 15        android:allowBackup="true"
@@ -38,29 +38,39 @@
 25        android:usesCleartextTraffic="true" >
 25-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:14:9-44
 26        <activity
-26-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:16:9-24:20
-27            android:name="online.dailyq.ui.main.MainActivity"
-27-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:17:13-49
-28            android:exported="true" >
-28-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:18:13-36
-29            <intent-filter>
-29-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:19:13-23:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:20:17-69
-30-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:20:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:22:17-77
-32-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:22:27-74
-33            </intent-filter>
-34        </activity>
-35        <activity
-35-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:25:9-29:20
-36            android:name="online.dailyq.ui.write.WriteActivity"
-36-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:26:13-51
-37            android:windowSoftInputMode="adjustResize" >
-37-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:27:13-55
-38        </activity>
-39    </application>
-40
-41</manifest>
+26-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:17:9-25:20
+27            android:name="online.dailyq.ui.splash.SplashActivity"
+27-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:18:13-53
+28            android:exported="true"
+28-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:20:13-36
+29            android:theme="@style/Theme.DailyQ.NoActionBar" >
+29-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:19:13-60
+30            <intent-filter>
+30-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:21:13-24:29
+31                <action android:name="android.intent.action.MAIN" />
+31-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:22:17-69
+31-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:22:25-66
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:23:17-77
+33-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:23:27-74
+34            </intent-filter>
+35        </activity>
+36        <activity android:name="online.dailyq.ui.login.LoginActivity" >
+36-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:27:9-29:20
+36-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:28:13-51
+37        </activity>
+38        <activity android:name="online.dailyq.ui.main.MainActivity" >
+38-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:31:9-33:20
+38-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:32:13-49
+39        </activity>
+40        <activity
+40-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:35:9-39:20
+41            android:name="online.dailyq.ui.write.WriteActivity"
+41-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:36:13-51
+42            android:windowSoftInputMode="adjustResize" >
+42-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:37:13-55
+43        </activity>
+44    </application>
+45
+46</manifest>
