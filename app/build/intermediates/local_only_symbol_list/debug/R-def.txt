@@ -7,6 +7,7 @@ color purple_500
 color purple_700
 color teal_200
 color teal_700
+color transparent_bar
 color white
 dimen divider
 dimen margin_large
@@ -16,6 +17,7 @@ dimen margin_xlarge
 dimen margin_xsmall
 dimen margin_xxlarge
 dimen qa_height
+dimen thumbnail_rounded_corner
 dimen thumbnail_size
 drawable btn_delete
 drawable ic_add_photo
@@ -51,6 +53,7 @@ id delete_button
 id done
 id edit_button
 id host
+id image
 id inner_answer_area
 id input_area
 id login
@@ -70,6 +73,7 @@ id today
 id user_id
 id user_id_layout
 id write_button
+layout activity_image_viewer
 layout activity_login
 layout activity_main
 layout activity_splash
@@ -100,6 +104,8 @@ string title_profile
 string title_timeline
 string title_today
 style Theme.DailyQ
+style Theme.DailyQ.Dark.ActionBar
+style Theme.DailyQ.ImageViewer
 style Theme.DailyQ.NoActionBar
 xml backup_rules
 xml data_extraction_rules

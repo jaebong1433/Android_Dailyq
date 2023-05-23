@@ -1183,6 +1183,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color transparent_bar
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -1606,6 +1607,7 @@ dimen test_navigation_bar_item_min_width
 dimen test_navigation_bar_label_padding
 dimen test_navigation_bar_shadow_height
 dimen test_navigation_bar_text_size
+dimen thumbnail_rounded_corner
 dimen thumbnail_size
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1889,6 +1891,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
+id coil_request_manager
 id collapseActionView
 id confirm_button
 id container
@@ -1977,6 +1980,7 @@ id ignoreRequest
 id image
 id info
 id inner_answer_area
+id input_area
 id invisible
 id inward
 id italic
@@ -1996,6 +2000,8 @@ id line3
 id linear
 id listMode
 id list_item
+id login
+id logo
 id masked
 id material_clock_display
 id material_clock_face
@@ -2073,6 +2079,8 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password
+id password_layout
 id password_toggle
 id path
 id pathRelative
@@ -2085,6 +2093,7 @@ id pin
 id position
 id postLayout
 id profile
+id progress
 id progress_circular
 id progress_horizontal
 id question
@@ -2211,6 +2220,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_id
+id user_id_layout
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -2290,7 +2301,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_image_viewer
+layout activity_login
 layout activity_main
+layout activity_splash
 layout activity_write
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2429,12 +2443,19 @@ string dialog_msg_are_you_sure_to_delete
 string done
 string edit
 string error_icon_content_description
+string error_login_failed
+string error_password_must_contain_number
+string error_password_too_short
+string error_uid_too_short
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string login
+string login_id_hint
+string login_password_hint
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2913,6 +2934,9 @@ style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
 style Theme_DailyQ
+style Theme_DailyQ_Dark_ActionBar
+style Theme_DailyQ_ImageViewer
+style Theme_DailyQ_NoActionBar
 style Theme_Design
 style Theme_Design_BottomSheetDialog
 style Theme_Design_Light

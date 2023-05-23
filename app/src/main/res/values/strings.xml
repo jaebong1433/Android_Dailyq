@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Daily Q</string>
+    <string name="app_name">오늘의 질문</string>
 
     <string name="title_timeline">타임라인</string>
     <string name="title_today">오늘의 질문</string>

@@ -2,11 +2,12 @@
 <resources xmlns:ns1="http://schemas.android.com/tools">
     <color name="black">#FF000000</color>
     <color name="color_under_card">#f5f5f5</color>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="purple_200">#FFC19E</color>
+    <color name="purple_500">#FF5E00</color>
+    <color name="purple_700">#F29661</color>
+    <color name="teal_200">#FF9436</color>
     <color name="teal_700">#FF018786</color>
+    <color name="transparent_bar">#80000000</color>
     <color name="white">#FFFFFFFF</color>
     <dimen name="divider">1dp</dimen>
     <dimen name="margin_large">24dp</dimen>
@@ -16,10 +17,11 @@
     <dimen name="margin_xsmall">4dp</dimen>
     <dimen name="margin_xxlarge">48dp</dimen>
     <dimen name="qa_height">160dp</dimen>
+    <dimen name="thumbnail_rounded_corner">4dp</dimen>
     <dimen name="thumbnail_size">56dp</dimen>
     <string name="add_photo">사진 추가</string>
     <string name="answer_hint">나는...</string>
-    <string name="app_name">Daily Q</string>
+    <string name="app_name">오늘의 질문</string>
     <string name="cancel">취소</string>
     <string name="date_format">yyyy년 M월 d일</string>
     <string name="delete">삭제</string>
@@ -49,6 +51,17 @@
         
         <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
         
+    </style>
+    <style name="Theme.DailyQ.Dark.ActionBar" parent="Widget.MaterialComponents.ActionBar.Solid">
+        <item name="background">@color/transparent_bar</item>
+    </style>
+    <style name="Theme.DailyQ.ImageViewer">
+        
+        <item name="android:windowFullscreen">true</item>
+        
+        <item name="actionBarStyle">@style/Theme.DailyQ.Dark.ActionBar</item>
+        
+        <item name="windowActionBarOverlay">true</item>
     </style>
     <style name="Theme.DailyQ.NoActionBar">
         <item name="windowActionBar">false</item>

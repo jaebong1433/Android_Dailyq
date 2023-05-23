@@ -41,6 +41,11 @@
             android:name="online.dailyq.ui.write.WriteActivity"
             android:windowSoftInputMode="adjustResize" >
         </activity>
+        <activity
+            android:name="online.dailyq.ui.image.ImageViewerActivity"
+            android:label=""
+            android:theme="@style/Theme.DailyQ.ImageViewer" >
+        </activity>
     </application>
 
 </manifest>

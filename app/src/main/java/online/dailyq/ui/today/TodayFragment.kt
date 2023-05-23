@@ -9,15 +9,18 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import coil.load
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 import online.dailyq.R
 import online.dailyq.api.response.Question
 import online.dailyq.databinding.FragmentTodayBinding
 import online.dailyq.ui.base.BaseFragment
+import online.dailyq.ui.image.ImageViewerActivity
 import online.dailyq.ui.write.WriteActivity
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class TodayFragment : BaseFragment() {
 
@@ -26,14 +29,13 @@ class TodayFragment : BaseFragment() {
 
     var question: Question? = null
 
-    val startForResult =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                lifecycleScope.launch {
-                    setupAnswer()
-                }
+    val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            lifecycleScope.launch {
+                setupAnswer()
             }
         }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -44,6 +46,7 @@ class TodayFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.writeButton.setOnClickListener {
             startForResult.launch(Intent(requireContext(), WriteActivity::class.java).apply {
                 putExtra(WriteActivity.EXTRA_QID, question!!.id)
@@ -73,7 +76,6 @@ class TodayFragment : BaseFragment() {
                 setupAnswer()
             }
         }
-
     }
 
     override fun onDestroyView() {
@@ -105,5 +107,17 @@ class TodayFragment : BaseFragment() {
         binding.textAnswer.text = answer?.text
 
         binding.writeButton.isVisible = answer == null
+
+        binding.photoAnswer.isVisible = !answer?.photo.isNullOrEmpty()
+        answer?.photo?.let {
+            binding.photoAnswer.load(it) {
+                placeholder(R.drawable.ph_image)
+            }
+            binding.photoAnswer.setOnClickListener {
+                startActivity(Intent(requireContext(), ImageViewerActivity::class.java).apply {
+                    putExtra(ImageViewerActivity.EXTRA_URL, answer.photo)
+                })
+            }
+        }
     }
 }

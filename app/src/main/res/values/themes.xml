@@ -19,4 +19,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.DailyQ.ImageViewer">
+        <!--android:windowFullscreen 상태 표시줄 숨기기-->
+        <item name="android:windowFullscreen">true</item>
+        <!--actionBarStyle 앱바의 배경색 변경 -->
+        <item name="actionBarStyle">@style/Theme.DailyQ.Dark.ActionBar</item>
+        <!-- 앱바를 액티비티 위에 오버레이로 표시-->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="Theme.DailyQ.Dark.ActionBar" parent="Widget.MaterialComponents.ActionBar.Solid">
+        <item name="background">@color/transparent_bar</item>
+    </style>
 </resources>
