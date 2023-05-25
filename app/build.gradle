@@ -50,6 +50,9 @@ dependencies {
     ////두 손가락으로 이미지를 확대하거나 축소하는 기능을 지원받기 위해
     //오픈소스 프로젝트인 PhotoView를 사용
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    //타임라인
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

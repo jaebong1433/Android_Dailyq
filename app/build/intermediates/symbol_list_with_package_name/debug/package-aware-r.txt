@@ -1617,6 +1617,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen user_photo_normal
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1855,6 +1856,7 @@ id animateToEnd
 id animateToStart
 id answer
 id answer_area
+id answer_count
 id arc
 id asConfigured
 id async
@@ -1873,6 +1875,7 @@ id buttonPanel
 id button_area
 id cache_measures
 id cancel_button
+id card
 id center
 id center_horizontal
 id center_vertical
@@ -1925,6 +1928,7 @@ id disableHome
 id disablePostScroll
 id disableScroll
 id disjoint
+id divider
 id done
 id dragDown
 id dragEnd
@@ -1938,7 +1942,9 @@ id easeInOut
 id easeOut
 id edit_button
 id edit_query
+id elapsed_time
 id elastic
+id empty
 id end
 id endToStart
 id enterAlways
@@ -2100,6 +2106,8 @@ id question
 id radio
 id ratio
 id rectangles
+id recycler
+id retry
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2222,6 +2230,8 @@ id up
 id useLogo
 id user_id
 id user_id_layout
+id user_name
+id user_photo
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -2301,6 +2311,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_details
 layout activity_image_viewer
 layout activity_login
 layout activity_main
@@ -2322,7 +2333,11 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_timeline
 layout fragment_today
+layout item_answer
+layout item_timeline_card
+layout item_timeline_load_state
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2426,6 +2441,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string add_photo
+string answer_count_format
 string answer_hint
 string app_name
 string appbar_scrolling_view_behavior
@@ -2511,12 +2527,14 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string no_answer_yet
 string ok
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string retry
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_profile

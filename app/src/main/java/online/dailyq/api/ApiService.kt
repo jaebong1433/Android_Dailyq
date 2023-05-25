@@ -3,6 +3,7 @@ package online.dailyq.api
 import android.content.Context
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
+import okhttp3.Cache
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,29 +22,36 @@ import retrofit2.http.*
 import java.time.LocalDate
 import java.util.concurrent.TimeUnit
 
-
 interface ApiService {
 
     companion object {
         private var INSTANCE: ApiService? = null
 
-        private fun okHttpClient(): OkHttpClient {
+        //캐시가 저장될 위치와 사용할 크기를 생성자로 전달해 Cache를 생성하고,
+        //OkHttpClient.Builder의 cache()메서드로 전달함
+        private fun okHttpClient(context: Context): OkHttpClient {
             val builder = OkHttpClient.Builder()
 
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
 
+            val cacheSize = 5 * 1024 * 1024L // 5 MB
+            val cache = Cache(context.cacheDir, cacheSize)
+
             return builder
                 .connectTimeout(3, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
+                .cache(cache)
                 .addInterceptor(AuthInterceptor())
                 .authenticator(TokenRefreshAuthenticator())
                 .addInterceptor(logging)
+                .addInterceptor(EndpointLoggingInterceptor("AppInterceptor", "answers"))
+                .addNetworkInterceptor(EndpointLoggingInterceptor("NetworkInterceptor", "answers"))
                 .build()
         }
 
-        private fun create(context: Context): ApiService {
+        fun create(context: Context): ApiService {
             val gson = GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .registerTypeAdapter(LocalDate::class.java, LocalDateAdapter)
@@ -53,7 +61,7 @@ interface ApiService {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addConverterFactory(LocalDateConverterFactory())
                 .baseUrl("http://10.0.2.2:5000")
-                .client(okHttpClient())
+                .client(okHttpClient(context))
                 .build()
                 .create(ApiService::class.java)
         }
@@ -84,10 +92,21 @@ interface ApiService {
         @Tag authType: AuthType = AuthType.NO_AUTH
     ): Call<AuthToken>
 
+    @GET("/v2/questions")
+    suspend fun getQuestions(
+        @Query("from_date") fromDate: LocalDate,
+        @Query("page_size") pageSize: Int
+    ): Response<List<Question>>
+
     @GET("/v2/questions/{qid}")
     suspend fun getQuestion(
         @Path("qid") qid: LocalDate
     ): Response<Question>
+
+    @GET("/v2/questions/{qid}/answers")
+    suspend fun getAnswers(
+        @Path("qid") qid: LocalDate
+    ): Response<List<Answer>>
 
     @GET("/v2/questions/{qid}/answers/{uid}")
     suspend fun getAnswer(
@@ -109,13 +128,13 @@ interface ApiService {
         @Path("qid") qid: LocalDate,
         @Field("text") text: String? = null,
         @Field("photo") photo: String? = null,
-        @Path("uid") uid: String? =  AuthManager.uid
+        @Path("uid") uid: String? = AuthManager.uid
     ): Response<Answer>
 
     @DELETE("/v2/questions/{qid}/answers/{uid}")
     suspend fun deleteAnswer(
         @Path("qid") qid: LocalDate,
-        @Path("uid") uid: String? =  AuthManager.uid
+        @Path("uid") uid: String? = AuthManager.uid
     ): Response<Unit>
 
     @Multipart
@@ -123,4 +142,5 @@ interface ApiService {
     suspend fun uploadImage(
         @Part image: MultipartBody.Part,
     ): Response<Image>
+
 }

@@ -38,6 +38,10 @@
 
         </activity>
 
+        <activity android:name=".ui.details.DetailsActivity">
+
+        </activity>
+
         <activity android:theme="@style/Theme.DailyQ.ImageViewer"
                 android:label=""
                 android:name=".ui.image.ImageViewerActivity">
