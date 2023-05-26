@@ -2,7 +2,7 @@ package online.dailyq.api.response
 
 import java.util.*
 
-data class User (
+data class User(
     val id: String,
     val name: String,
     val description: String?,
@@ -10,5 +10,6 @@ data class User (
     val answerCount: Int,
     val followerCount: Int,
     val followingCount: Int,
+    val isFollowing: Boolean?,
     val updatedAt: Date
-        )
+)

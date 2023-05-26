@@ -10,7 +10,7 @@ import online.dailyq.R
 import online.dailyq.api.response.Answer
 import online.dailyq.databinding.ItemAnswerBinding
 import online.dailyq.ui.image.ImageViewerActivity
-
+import online.dailyq.ui.profile.ProfileActivity
 
 //사용자가 답을 쓴 시간은 경과 시간으로 표시하는데,
 //DateUtils에 준비되어 있는 getRelativeTimeSpanString()메서드를 사용
@@ -27,6 +27,13 @@ class AnswerViewHolder(val binding: ItemAnswerBinding) : RecyclerView.ViewHolder
                 error(R.drawable.ph_user)
                 transformations(CircleCropTransformation())
             }
+        }
+
+        binding.userPhoto.setOnClickListener {
+            val context = itemView.context
+            context.startActivity(Intent(context, ProfileActivity::class.java).apply {
+                putExtra(ProfileActivity.EXTRA_UID, answer.answerer?.id)
+            })
         }
 
         binding.textAnswer.text = answer.text

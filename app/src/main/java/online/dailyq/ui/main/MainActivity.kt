@@ -1,6 +1,7 @@
 package online.dailyq.ui.main
 
 import android.os.Bundle
+import online.dailyq.AuthManager
 import online.dailyq.R
 import online.dailyq.databinding.ActivityMainBinding
 import online.dailyq.ui.base.BaseActivity
@@ -31,7 +32,11 @@ class MainActivity : BaseActivity() {
                     supportActionBar?.setTitle(R.string.title_today)
                 }
                 R.id.profile -> {
-                    ft.replace(R.id.host, ProfileFragment())
+                    ft.replace(R.id.host, ProfileFragment().apply {
+                        arguments = Bundle().apply {
+                            putString(ProfileFragment.ARG_UID, AuthManager.uid)
+                        }
+                    })
                     supportActionBar?.setTitle(R.string.title_profile)
                 }
             }

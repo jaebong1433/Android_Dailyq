@@ -815,6 +815,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -1062,6 +1063,7 @@ color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color follow_button
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
@@ -1184,6 +1186,7 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color transparent_bar
+color unfollow_button
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -1279,6 +1282,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen count_cell_width
 dimen default_dimension
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
@@ -1617,6 +1621,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen user_photo_large
 dimen user_photo_normal
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
@@ -1857,6 +1862,7 @@ id animateToStart
 id answer
 id answer_area
 id answer_count
+id answer_count_area
 id arc
 id asConfigured
 id async
@@ -1903,6 +1909,7 @@ id contentPanel
 id contiguous
 id coordinator
 id cos
+id count_area
 id counterclockwise
 id custom
 id customPanel
@@ -1916,6 +1923,7 @@ id default_activity_button
 id delete_button
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1961,6 +1969,11 @@ id fitToContents
 id fixed
 id flip
 id floating
+id follow_button
+id follower_count
+id follower_count_area
+id following_count
+id following_count_area
 id forever
 id fragment_container_view_tag
 id ghost_view
@@ -2062,6 +2075,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id name
 id nav_view
 id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
@@ -2080,6 +2094,7 @@ id on
 id outline
 id outward
 id packed
+id pager
 id parallax
 id parent
 id parentPanel
@@ -2107,6 +2122,7 @@ id radio
 id ratio
 id rectangles
 id recycler
+id refresh_layout
 id retry
 id reverseSawtooth
 id right
@@ -2315,6 +2331,7 @@ layout activity_details
 layout activity_image_viewer
 layout activity_login
 layout activity_main
+layout activity_profile
 layout activity_splash
 layout activity_write
 layout custom_dialog
@@ -2333,11 +2350,13 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_profile
 layout fragment_timeline
 layout fragment_today
 layout item_answer
 layout item_timeline_card
 layout item_timeline_load_state
+layout item_user_answer_card
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2441,6 +2460,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string add_photo
+string answer
 string answer_count_format
 string answer_hint
 string app_name
@@ -2466,6 +2486,9 @@ string error_uid_too_short
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string follow
+string follower
+string following
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -2492,6 +2515,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string me
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -2540,6 +2564,7 @@ string status_bar_notification_info_overflow
 string title_profile
 string title_timeline
 string title_today
+string unfollow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -3384,6 +3409,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

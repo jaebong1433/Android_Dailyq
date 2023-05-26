@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 import online.dailyq.R
 import online.dailyq.databinding.ActivityDetailsBinding
+import online.dailyq.db.entity.QuestionEntity
 import online.dailyq.ui.base.BaseActivity
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -49,9 +50,20 @@ class DetailsActivity : BaseActivity() {
         )
 
         lifecycleScope.launch {
+            db.getQuestionDao().get(qid.toString())?.let {
+                binding.question.text = it.text
+            }
+
             val questionResponse = api.getQuestion(qid)
+
             if (questionResponse.isSuccessful) {
-                binding.question.text = questionResponse.body()?.text
+                val question = questionResponse.body()
+                binding.question.text = question?.text
+
+                question?.let {
+                    val questionEntity = QuestionEntity(it.id, it.text, it.answerCount, it.updatedAt, it.createdAt)
+                    db.getQuestionDao().insertOrReplace(questionEntity)
+                }
             }
 
             val answersResponse = api.getAnswers(qid)

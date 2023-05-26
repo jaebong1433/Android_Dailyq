@@ -3,9 +3,11 @@ package online.dailyq.ui.base
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import online.dailyq.api.ApiService
+import online.dailyq.db.AppDatabase
 
 abstract class BaseActivity : AppCompatActivity() {
     val api: ApiService by lazy { ApiService.getInstance() }
+    val db: AppDatabase by lazy { AppDatabase.getInstance(this) }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -16,5 +18,4 @@ abstract class BaseActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

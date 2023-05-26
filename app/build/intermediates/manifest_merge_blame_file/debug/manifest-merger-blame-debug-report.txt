@@ -15,7 +15,7 @@
 11-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <application
-13-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:7:5-50:19
+13-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:7:5-54:19
 14        android:name="online.dailyq.App"
 14-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:8:9-28
 15        android:allowBackup="true"
@@ -84,6 +84,19 @@
 49            android:theme="@style/Theme.DailyQ.ImageViewer" >
 49-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:45:19-66
 50        </activity>
-51    </application>
-52
-53</manifest>
+51        <activity android:name="online.dailyq.ui.profile.ProfileActivity" >
+51-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:51:9-53:20
+51-->C:\Users\82104\Projects\DailyQ\app\src\main\AndroidManifest.xml:51:19-61
+52        </activity>
+53
+54        <service
+54-->[androidx.room:room-runtime:2.4.3] C:\Users\82104\.gradle\caches\transforms-3\636c3702a3891ad7445fe399a8861968\transformed\room-runtime-2.4.3\AndroidManifest.xml:25:9-28:40
+55            android:name="androidx.room.MultiInstanceInvalidationService"
+55-->[androidx.room:room-runtime:2.4.3] C:\Users\82104\.gradle\caches\transforms-3\636c3702a3891ad7445fe399a8861968\transformed\room-runtime-2.4.3\AndroidManifest.xml:26:13-74
+56            android:directBootAware="true"
+56-->[androidx.room:room-runtime:2.4.3] C:\Users\82104\.gradle\caches\transforms-3\636c3702a3891ad7445fe399a8861968\transformed\room-runtime-2.4.3\AndroidManifest.xml:27:13-43
+57            android:exported="false" />
+57-->[androidx.room:room-runtime:2.4.3] C:\Users\82104\.gradle\caches\transforms-3\636c3702a3891ad7445fe399a8861968\transformed\room-runtime-2.4.3\AndroidManifest.xml:28:13-37
+58    </application>
+59
+60</manifest>

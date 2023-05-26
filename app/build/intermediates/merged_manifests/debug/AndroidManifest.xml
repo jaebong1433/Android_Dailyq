@@ -48,6 +48,13 @@
             android:label=""
             android:theme="@style/Theme.DailyQ.ImageViewer" >
         </activity>
+        <activity android:name="online.dailyq.ui.profile.ProfileActivity" >
+        </activity>
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
     </application>
 
 </manifest>

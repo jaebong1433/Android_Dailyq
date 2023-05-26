@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.ExperimentalPagingApi
+import androidx.paging.LoadState
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import online.dailyq.databinding.FragmentTimelineBinding
@@ -31,6 +34,11 @@ class TimelineFragment : BaseFragment() {
 
         binding.apply {
             adapter = TimelineAdapter(requireContext())
+            adapter.addLoadStateListener {
+                if (it.mediator?.refresh is LoadState.NotLoading) {
+                    binding.refreshLayout.isRefreshing = false
+                }
+            }
 
             recycler.adapter = adapter.withLoadStateFooter(TimelineLoadStateAdapter {
                 adapter.retry()
@@ -38,11 +46,23 @@ class TimelineFragment : BaseFragment() {
 
             recycler.adapter = adapter
             recycler.layoutManager = LinearLayoutManager(context)
+
+            binding.refreshLayout.setOnRefreshListener {
+                lifecycleScope.launch {
+                    delay(1000)
+                    adapter.refresh()
+                }
+            }
         }
 
         lifecycleScope.launch {
-            Pager(PagingConfig(initialLoadSize = 6, pageSize = 3, enablePlaceholders = false)) {
-                TimelinePagingSource(api)
+            @OptIn(ExperimentalPagingApi::class)
+            Pager(
+                PagingConfig(initialLoadSize = 6, pageSize = 3, enablePlaceholders = false),
+                null,
+                TimelineRemoteMediator(api, db)
+            ) {
+                db.getQuestionDao().getPagingSource()
             }.flow.collectLatest {
                 adapter.submitData(it)
             }

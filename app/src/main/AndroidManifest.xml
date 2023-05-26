@@ -47,6 +47,10 @@
                 android:name=".ui.image.ImageViewerActivity">
 
         </activity>
+
+        <activity android:name=".ui.profile.ProfileActivity">
+
+        </activity>
     </application>
 
 </manifest>
