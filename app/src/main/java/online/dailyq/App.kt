@@ -10,5 +10,6 @@ class App : Application() {
 
         AuthManager.init(this)
         ApiService.init(this)
+        Settings.init(this)
     }
 }

@@ -36,4 +36,5 @@
     <string name="unfollow">언팔로우</string>
     <string name="me">나</string>
 
+    <string name="logout">로그아웃</string>
 </resources>
