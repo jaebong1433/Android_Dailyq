@@ -1,14 +1,11 @@
-안경사 면허증을 막 취득하였을 때 안경 쇼핑몰을 경영하고 싶었던 기억을 되살려 제작하게 되었습니다.
-안경을 주로 파는 쇼핑몰이며 집에서 편안하게 안경 제품을 선택하고 구매하는 등 고객들에게 온라인 쇼핑의 편리성을 제공합니다.
-주요기능으로는 상품등록, 상품관리, 장바구니, 구매이력 등의 기능을 구현했습니다.
+매일 변하는 다양한 질문에 따라 다양한 답변을 함으로써 흥미를 이끌어내 적극적인 어플 사용 추구하고
+다른 이용자의 다양한 의견을 보면서 아이디어 또는 영감을 받을 수 있고 팔로우 기능을 통한 유대감을 형성합니다.
 
-프로그래밍 언어 : Java 11, CSS, Html, javascript
-DB : MySQL
-IDE : IntelliJ IDEA
-빌드도구 : Maven
-라이브러리 : Bootstrap, jQuery, LomBok
-프레임워크 : Spring framework, Spring Boot, Spring Security, JUnit
-뷰템플릿 : Thymeleaf
-API : Spring DATA JPA
-참고 : chat GPT
+프로그래밍 언어 : Kotlin, Python <br>
+DB : SQLite <br>
+서버 : flask <br>
+IDE : 안드로이드 스튜디오 <br>
+빌드도구 : Gradle <br>
+라이브러리 : Gson, Retrofit(REST API), Coil, Paging3 <br>
+참고 : chat GPT <br>
 
