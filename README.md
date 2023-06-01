@@ -9,7 +9,7 @@ DB : SQLite <br>
 IDE : 안드로이드 스튜디오 <br>
 빌드도구 : Gradle <br>
 라이브러리 : Gson, Retrofit(REST API), Coil, Paging3 <br>
-참고 : chat GPT <br>
+참고 : chat GPT, 도서<br>
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/7cb6e36c-5fd9-40a2-a7f8-55c36a8251d0)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/1d786315-cb80-42a5-9356-617c5ce56f46)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/0c29ad33-645a-4c17-967d-8422e7b6e226)
