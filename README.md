@@ -15,7 +15,6 @@ IDE : 안드로이드 스튜디오 <br>
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/0c29ad33-645a-4c17-967d-8422e7b6e226)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/8b8b6576-0426-4f22-880a-ba41053fb197)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/690c423f-01c4-41fa-a78e-3584b4a2d9d0)
-![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/d50c592a-04c9-44b1-a6b1-749f69d9950d)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/316ea4e9-6b04-42c3-a2f8-45ca699a0f31)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/5e517321-38bc-427d-8aa8-72ff943fb212)
 ![image](https://github.com/jaebong1433/Android_Dailyq/assets/125847340/19aa1c87-c19a-46d7-b456-e7893eacd667)
